@@ -1,0 +1,31 @@
+.bg-container{
+    background-color: rgb(17, 79, 234);
+    height: 100vh;
+    text-align: center;
+}
+.guess-image{
+    width: 100%;
+}
+.para{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.text-center{
+    text-align: center;
+}
+.guess-head{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    color: white;
+}
+.image{
+    width: 50px;
+}
+.user-input{
+    width: 200px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.check-guess{
+    width: 110px;
+}

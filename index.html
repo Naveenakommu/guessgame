@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="game.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <div class="container-fluid bg-container">
+            <div class="row bg-white">
+                <div class="col-12 col-md-6 m-auto">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/guess-game-img.png" class="guess-image"/>
+                    <p class="para">Find out the right number between 1 to 100</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 p-3">
+                    <h1 class="guess-head pr-3">Guess The Number<img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/guess-number-img.png"class="image"/>
+                    </h1>
+                    <input type="text" class="user-input" id="userInput">
+                    <div>
+                        <button class="btn btn-primary p-2 m-3 check-guess" onclick="checkGuess()">Check</button>
+                    </div>
+                    <p class="game-result" id="gameResult"></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            let gameResult=document.getElementById("gameResult");
+            let userInput=document.getElementById("userInput");
+            let randomNumber=Math.ceil(Math.random()*100);
+            function checkGuess(){
+                let guessNumber=parseInt(userInput.value);
+                if(guessNumber>randomNumber){
+                    gameResult.textContent="Too high! Try Again.";
+                    gameResult.style.backgroundColor="#1e217c";
+                    gameResult.style.color="white";
+                }
+                else if(guessNumber<randomNumber){
+                    gameResult.textContent="Too low! Try Again.";
+                    gameResult.style.backgroundColor="#1e217c";
+                    gameResult.style.color="white";
+                }
+                else if(guessNumber===randomNumber){
+                    gameResult.textContent="Congratulations! you got it right ";
+                    gameResult.style.backgroundColor="green";
+                    gameResult.style.color="white"; 
+                }
+            }
+        </script>
+        
+    </head>
+    <body>
+
+    </body>
+</html>
